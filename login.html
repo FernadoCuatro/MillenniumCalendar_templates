@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hola - MillenniumCalendar</title>
+
+    <!-- Estilos personalizados -->
+    <link href="assets/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- header -->
+    <div class="barra">
+        <div class="contenedor clearfix">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/img/new-millenium-logo.png" alt="new-millenium-logo" />
+                </a>
+            </div>
+            <nav class="navegacion-principal">
+                <a href="index.html">Calendario</a>
+                <a href="categorias.html">Categorías</a>
+                <a href="facilitadores.html">Facilitadores</a>
+                <a href="login.html">Administración</a>
+            </nav>
+        </div>
+    </div>
+    <!-- fin header -->
+    
+    <!-- contenido pagina -->
+    <div class="contenedor-oscuro">
+
+        <!-- Contenedor para el Log in -->
+        <form action="administracion/index.html" method="post">
+            <div class="login">
+                <!-- Contenedor para el input de email y la alerta si lo requiere -->
+                <div class="login-item">
+                    <input type="email" name="correo" class="form-control txt-login" placeholder="correo electrónico" required>
+                </div>
+
+                <!-- Contenedor para el input de contraseña con TextMode="Password" y la alerta si lo requiere -->
+                <div class="login-item">
+                    <input type="password" name="pw" class="form-control txt-login" minlength="6" placeholder = "contraseña" required>
+                </div>
+
+                <!-- Contenedor para el botor para iniciar sesión con el evento OnClick -->
+                <div class="login-item">
+                    <input type="submit" value="Iniciar sesión" class="btn-login" />
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <!-- fin contenido pagina -->
+
+    <!-- footer -->
+    <footer>
+        <div class="contenedor">
+            <div class="nosotros">
+                <h2>Sobre Nosotros</h2>
+                <p>Ofrecemos las mejores soluciones IT.</p>
+                <p>Con amplia experiencia en el mercado, desde 1999</p>
+            </div>
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="calendario.html">Calendario</a></li>
+                        <li><a href="categorias.html">Categorías</a></li>
+                        <li><a href="facilitadores.html">Facilitadores</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <p class="copyright">Todo los derechos reservados &copy;</p>
+    </footer>
+    <!-- fin footer -->
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿@model MillenniumCalendar.administrador
+
+@{
+    Layout = "~/Views/Shared/Layout_2.cshtml";
+    login login_datos = new login();
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 class="text-center">Añadir  Administrador</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label for="nombre" class="control-label col-md-2">Nombres: </label>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", @minlength = "5", @required = "true", @maxlength = "30" } })
+                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+            </div>
+
+            <label for="apellido" class="control-label col-md-1">Apellidos: </label>
+            <div class="col-md-4">
+                @Html.EditorFor(model => model.apellido, new { htmlAttributes = new { @class = "form-control", @minlength = "5", @required = "true", @maxlength = "30" } })
+                @Html.ValidationMessageFor(model => model.apellido, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group cont-agg-login">
+            <div class="form-group">
+                <label for="correo" class="control-label col-md-2">Correo electrónico: </label>
+                <div class="col-md-5">
+                    @Html.EditorFor(model => login_datos.correo, new { htmlAttributes = new { @class = "form-control", @type = "email", @minlength = "5", @required = "true" } })
+                    @Html.ValidationMessageFor(model => login_datos.correo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="login_inserta" class="control-label col-md-2">Contraseña: </label>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => login_datos.login_inserta, new { htmlAttributes = new { @class = "form-control", @type = "password", @minlength = "6", @required = "true" } })
+                    @Html.ValidationMessageFor(model => login_datos.login_inserta, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="login_inserta" class="control-label col-md-2">Repita su contraseña: </label>
+                <div class="col-md-4">
+                    @Html.EditorFor(model => login_datos.login_actualiza, new { htmlAttributes = new { @class = "form-control", @type = "password", @minlength = "6", @required = "true", @onkeyup = "validarcontraseña()" } })
+                    @Html.ValidationMessageFor(model => login_datos.login_actualiza, "", new { @class = "text-danger" })
+                    <span id="alertacontrasenia" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        @{
+            var lista_estado = new SelectList(
+                new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Activo", Value = "A"},
+                    new SelectListItem {Text = "Inactivo", Value = "I"},
+                }, "Value", "Text");
+        }
+
+        <div class="form-group">
+            <label for="estado_administrador" class="control-label col-md-2">Estado del administrador: </label>
+            <div class="col-md-4 config-select">
+                @Html.DropDownListFor(model => model.estado_administrador, lista_estado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.estado_administrador, "", new { @class = "text-danger" })
+            </div>
+
+            <label for="estado_login" class="control-label col-md-2">Estado del login: </label>
+            <div class="col-md-4 config-select">
+                @Html.DropDownListFor(model => login_datos.estado_login, lista_estado, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => login_datos.estado_login, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <input type="submit" value="Añadir nuevo administrador" id="envio" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="text-center">
+    @Html.ActionLink("Volver a listar todo los administradores", "Index", "Usuarios")
+</div>
+
+<script src="~/assets/js/index.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

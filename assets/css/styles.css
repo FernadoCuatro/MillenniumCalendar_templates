@@ -1,0 +1,289 @@
+﻿/* Importamos fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+/*   Estilos universales */
+html {
+    box-sizing: border-box;
+    background-color: #1D244C;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: 'Oswald', sans-serif;
+    margin: 0px;
+}
+
+.contenedor {
+    width: 90%;
+    margin: 0 auto;
+    height: 186px;
+}
+
+/* Estilos para la master page */
+.barra {
+    background-color: #1D244C;
+    padding: 20px 0;
+    height: 125px;
+}
+
+.logo {
+    width: 20%;
+    float: left;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.navegacion-principal {
+    width: 67%;
+    float: right;
+    text-align: right;
+    display: block;
+    margin-top: 20px;
+}
+
+.navegacion-principal a {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    margin: 0 10px 0 0;
+    padding: 10px 10px;
+}
+
+footer {
+    background-color: #1D244C;
+    padding-top: 40px;
+    margin-top: 30px;
+    height: 300px;
+}
+
+.nosotros {
+    float: left;
+    width: 30%;
+    color: #ffffff;
+}
+
+.menu {
+    float: right;
+    width: 40%;
+    text-align: right;
+}
+
+footer nav ul {
+    list-style: none;
+}
+
+footer nav ul li a {
+    display: inline-block;
+    width: 100px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+}
+
+.copyright {
+    padding: 10px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Estilos para la pagina de index */
+h2.titulo {
+    padding: 0px 20px;
+    text-align:center;
+}
+hr.separador {
+    width: 80%;
+    border: none;
+    height: 3px;
+    background-color: #1D244C;
+}
+div.curso {
+    margin:20px auto;
+    background-color: #fff;
+    width:80%;
+    height: 100%;
+    display: flex;
+}
+article.imagen-categoria {
+    width: 40%;
+    float: left;
+    padding: 15px;
+}
+div.img-curso-contenedor {
+    text-align: center;
+}
+img.img-curso {
+    width: 70%;
+}
+article.informacion-general {
+    width: 50%;
+    float: left;
+    padding: 15px;
+}
+p.nombre-actividad {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+div.alerta-limite {
+    border: 2px solid #1D244C;
+    border-radius: 10px;
+    position: absolute;
+    right: 7%;
+    background-color: #fff;
+    padding: 10px 30px;
+}
+img.img-facilitador {
+    width: 40px;
+    border-radius: 50%;
+}
+span.nombre-facilitador {
+    margin: 0px 0px 0px 10px;
+}
+span.duracion-actividad {
+    margin-left: 12%;
+}
+
+/* Estilos para la pagina de categorias */
+div.contenedor-categoria {
+    margin: 20px auto;
+    width:80%;
+    height: 100%;
+    display: table;
+}
+div.categorias {
+    width: 33.3%;
+    float: left;
+    padding: 15px;
+}
+div.categorias p {
+    text-align: center;
+}
+div.categorias h3 {
+    text-align: center;
+}
+
+div.categorias img {
+  max-width: 100%;
+}
+
+div.centrar-imagen {
+    text-align: center;
+}
+
+/* Estilos para la pagina de facilitador */
+div.contenedor-oscuro {
+    width: 100%;
+    height: 100%;
+    display: table;
+    background-color: #1D244C;
+    margin-bottom: -30px;
+}
+h2.titulo-ivt {
+    padding: 0px 20px;
+    text-align:center;
+    color: #eee;
+}
+
+div.formato-facilitador {
+    width: 95%;
+    margin: 0px auto;
+}
+div.facilitador {
+    width: 23%;
+    float: left;
+    margin: 20px 8px;
+    text-align: center;
+}
+div.facilitador img {
+    width: 90%;
+    margin: 10px 10px 0px 10px;
+}
+div.desc-facilitador {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+div.desc-facilitador h4,
+div.desc-facilitador p {
+    margin: 0px;
+}
+
+div.desc-facilitador h4 {
+    font-weight: normal;
+    color: #f86e01;
+    font-size: 1.3em;
+}
+
+/* Estilos para el login */
+div.login {
+  width: 400px;
+  margin: 16px auto;
+  color: #fff;
+}
+div.login-item {
+    margin: 20px 0px;
+}
+.txt-login {
+width: 100%;
+display: block;
+height: 50px;
+border: 1px solid #fff;
+outline: none;
+box-shadow: none;
+background: none;
+border-radius: 0px;
+font-size: 1.5em;
+color: #fff;
+text-align: center;
+font-family: 'Oswald', sans-serif;
+}
+.txt-login::placeholder {
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+.btn-login {
+    width: 100%;
+    background-color: #FFC42E;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 15px 0px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1D244C;
+    font-family: 'Oswald', sans-serif;
+}
+.alerta-login {
+    font-size: 1em;
+    margin: 5px;
+    color: #FFC42E;
+}
+.error-usuario {
+    width: 100%;
+    padding: 20px 0px;
+    text-align: center;
+}
+span.formt-facilitador {
+    color: #f86e01;
+    font-size: 1.3em;
+}
+div.img-facilitador-contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

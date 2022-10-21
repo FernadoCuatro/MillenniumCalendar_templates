@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MillenniumCalendar.SP_buscar_actividad_idResult>
+
+@{
+    Layout = "~/Views/Shared/Layout_2.cshtml";
+}
+
+<h4 class="text-center">Detalles acerca de la actividad</h4>
+<hr />
+<div class="cont-detalles">
+    @foreach (var item in Model)
+    {
+        <p><b>Identificador de la actividad:</b> @Html.DisplayFor(modelItem => item.id_actividad)</p>
+        <p><b>Categoría:</b> @Html.DisplayFor(modelItem => item.nombre_categoria)</p>
+        <p><b>Facilitador:</b> @Html.DisplayFor(modelItem => item.nombre_facilitador)</p>
+        <p><b>Actividad:</b> @Html.DisplayFor(modelItem => item.nombre_actividad)</p>
+        <p><b>Fecha de inicio:</b> @Convert.ToDateTime(item.fecha_inicio).ToString("dd/MM/yyyy")</p>
+        <p><b>Fecha a culminar:</b> @Convert.ToDateTime(item.fecha_final).ToString("dd/MM/yyyy")</p>
+        <p><b>Días a impartir:</b> @Html.DisplayFor(modelItem => item.dias)</p>
+        <p><b>Horario:</b> @Html.DisplayFor(modelItem => item.horario)</p>
+        <p><b>Duración:</b> @Html.DisplayFor(modelItem => item.duracion)</p>
+        <p><b>Descripción:</b> @Html.DisplayFor(modelItem => item.descripcion)</p>
+        <p><b>Estado de la actividad:</b> @{ if (item.estado_actividad.Equals("A ")) {  @Html.DisplayName("Activo"); } else { @Html.DisplayName("Inactivo"); }  } </p>
+
+        <p class="cont-aditoria"><b>Agregado por:</b> @Html.DisplayFor(modelItem => item.actividad_inserta) | @Html.DisplayFor(modelItem => item.fecha_inserta)</p>
+        <p><b>Actualizado por:</b> @Html.DisplayFor(modelItem => item.actividad_actualiza) | @Html.DisplayFor(modelItem => item.fecha_actualiza)</p>
+    }
+</div>
+
+<div class="text-center btn-details">
+    @Html.ActionLink("Volver a listar todas las actividades", "Index", "Actividades")
+</div>

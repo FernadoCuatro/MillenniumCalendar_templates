@@ -1,0 +1,188 @@
+﻿/* Importamos fuentes */
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+}
+
+/* Estilos para contenedores */
+
+#viewport {
+  padding-left: 250px;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Estilos para el sidebar (Menu) */
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background-color: #1D244C;
+}
+
+#sidebar header {
+  background-color: #1D244C;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+img.logo-sidebar {
+    width: 70%;
+    margin: 30px 0px;
+}
+
+li.cerrar-usuario a {
+    color: red !important;
+    font-weight: bold;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 14px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nav a i{
+  margin-right: 16px;
+}
+
+/* estilos para login */
+div.contenido-administrador {
+    margin: 20px 0px;
+    text-align: center;
+}
+div.inicio-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.inicio-item {
+    width: 20%;
+    float: left;
+    margin: 12px;
+    padding: 15px;
+    border: 2px solid #1D244C;
+    border-radius: 7px;
+}
+div.item-1 {
+    background-color: #70d6ff;
+}
+div.item-2 {
+    background-color: #ff70a6;
+}
+div.item-3 {
+    background-color: #ff9770;
+}
+div.item-4 {
+    background-color: #ffd670;
+}
+div.icono-item {
+    font-size: 3.0em;
+    color: #1D244C;
+}
+div.texto-item {
+    font-family: 'Roboto', sans-serif;
+    color: #1D244C;
+    font-size: 1.5em;
+    font-weight: bold;
+}s
+a.enlace-item:hover {
+    text-decoration: none;
+}
+
+/* Estilos para usuarios_agregar */
+div.contenido-formulario {
+    width: 50%;
+    margin: 0px auto;
+}
+
+/* Añadidos recientemente */
+td.config-controles {
+    width: 8%;
+}
+p.cont-btn-add {
+    text-align: center;
+}
+a.btn-add {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+div.config-textarea textarea{
+    height: 60px;   
+    width: 100%;
+    resize: none;
+    border: 1px solid #ccc;
+}
+
+div.config-select select {
+    width: 25%;
+    height: 35px;
+    border: 1px solid #ccc;
+}
+span.nombre-eliminar {
+    color: red;
+    font-weight: bold;
+}
+
+div.cont-eliminar {
+    margin: 0px auto;
+    display: table;
+}
+
+div.cont-detalles {
+    margin: 0px auto;
+    display: table;
+}
+
+div.cont-detalles p {
+    margin-bottom: 10px;
+    display: block;
+}
+p.cont-aditoria {
+    margin-top: 40px;
+    display: block;
+}
+div.btn-details {
+    margin-top: 30px;
+}
+div.cont-agg-login {
+    margin: 5% 0px;
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+}

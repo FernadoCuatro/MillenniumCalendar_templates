@@ -1,0 +1,60 @@
+﻿@model MillenniumCalendar.SP_buscar_facilitador_idResult
+
+@{
+    Layout = "~/Views/Shared/Layout_2.cshtml";
+    ViewBag.eliminar = @Html.DisplayFor(model => model.nombre_facilitador);
+    ViewBag.estado = @Html.DisplayFor(model => model.estado_facilitador);
+}
+
+<div>
+    <h4 class="text-center">Inhabilitar facilitador</h4>
+    <h5 class="text-center">¿Está seguro que desea inhabilitar el registro de <span class="nombre-eliminar">@ViewBag.eliminar</span>?</h5>
+    <hr />
+
+    <div class="cont-eliminar">
+        <dl class="dl-horizontal">
+            <dt>
+                Nombre del facilitador:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nombre_facilitador)
+            </dd>
+
+            <dt>
+                Estudio del facilitador:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.estudio)
+            </dd>
+
+            <dt>
+                Estado del facilitador:
+            </dt>
+
+            <dd>
+                @{
+                    if (ViewBag.estado.ToString() == "A ")
+                    {
+                        @Html.DisplayName("Activo");
+                    }
+                    else
+                    {
+                        @Html.DisplayName("Inactivo");
+                    }
+                }
+            </dd>
+
+        </dl>
+    </div>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-colo text-center">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a listar todo los facilitadores", "Index", "Facilitadores")
+        </div>
+    }
+</div>

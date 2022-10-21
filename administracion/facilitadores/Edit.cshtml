@@ -1,0 +1,65 @@
+﻿@model MillenniumCalendar.SP_buscar_facilitador_idResult
+
+@{
+    Layout = "~/Views/Shared/Layout_2.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4 class="text-center">Editar facilitador</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            <label for="nombre_facilitador" class="control-label col-md-2">Nombre del facilitador: </label>
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.nombre_facilitador, new { htmlAttributes = new { @class = "form-control", @minlength = "10", @required = "true" } })
+                @Html.ValidationMessageFor(model => model.nombre_facilitador, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="estudio" class="control-label col-md-2">Estudios realizados: </label>
+            <div class="col-md-8 config-textarea">
+                @Html.TextAreaFor(model => model.estudio, new { htmlAttributes = new { @class = "form-control", @required = "true" } })
+                @Html.ValidationMessageFor(model => model.estudio, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @{
+            var selectList = new SelectList(
+                new List<SelectListItem>
+                {
+                    new SelectListItem {Text = "Activo", Value = "A"},
+                    new SelectListItem {Text = "Inactivo", Value = "I"},
+                }, "Value", "Text");
+        }
+
+        <div class="form-group">
+            <label for="estado_facilitador" class="control-label col-md-2">Estado del facilitador: </label>
+            <div class="col-md-4 config-select">
+                @Html.DropDownListFor(model => model.estado_facilitador, selectList, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.estado_facilitador, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10 text-right">
+                <input type="submit" value="Actualizar cambios" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="text-center">
+    @Html.ActionLink("Volver a listar todo los facilitadores", "Index", "Facilitadores")
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

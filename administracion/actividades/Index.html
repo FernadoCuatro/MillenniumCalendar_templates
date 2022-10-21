@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Administración - MillenniumCalendar</title>
+    <!-- Estilos personalizados -->
+    <link href="../../assets/css/styles_administracion.css" rel="stylesheet" />
+
+    <!-- Estilos externos -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css' />
+
+    <!-- Kits de iconos -->
+    <script src="https://kit.fontawesome.com/d21a3be417.js"></script>
+</head>
+<body>
+    
+    <div id="viewport">
+
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <header>
+                <img class="logo-sidebar" src="../../assets/img/new-millenium-logo.png" />
+            </header>
+            <ul class="nav">
+                <li><a href="../index.html"><i class="fas fa-home"></i>Inicio</a></li>
+                <li><a href="../usuarios/index.html"><i class="fas fa-user-shield"></i>Usuarios</a></li>
+                <li><a href="../actividades/index.html"><i class="fas fa-paperclip"></i>Actividades</a></li>
+                <li><a href="../categorias/index.html"><i class="fas fa-cogs"></i>Categorías</a></li>
+                <li><a href="../facilitadores/index.html"><i class="fas fa-chalkboard-teacher"></i>Facilitadores</a></li>
+                <li><a href="../informacion.html"><i class="fas fa-info-circle"></i>Bitácora</a></li>
+            </ul>
+        </div>
+        <!-- ./Sidebar -->
+        <!-- content -->
+        <div id="content">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a>Melissa Alexandra Lopez</a></li>
+                        <li class="cerrar-usuario"><a href="../../index.html"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container-fluid">
+                <!-- Contenido pantalla -->
+                <p class="cont-btn-add">
+                    <a href="@Url.Action("Create", "Actividades")" class="btn-add">Añadir una nueva actividad</a><br />
+                </p>
+
+                <table class="table">
+                    <tr>
+                        <th>
+                            Categoría
+                        </th>
+                        <th>
+                            Facilitador
+                        </th>
+                        <th>
+                            Actividad
+                        </th>
+                        <th>
+                            Inicio
+                        </th>
+                        <th>
+                            Fin
+                        </th>
+                        <th>
+                            Días
+                        </th>
+                        <th>
+                            Horario
+                        </th>
+                        <th>
+                            Descripción
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            nombre_categoria
+                        </td>
+                        <td>
+                            nombre_facilitador
+                        </td>
+                        <td>
+                            nombre_actividad
+                        </td>
+                        <td>
+                            dd/MM/yyyy
+                        </td>
+                        <td>
+                            dd/MM/yyyy
+                        </td>
+                        <td>
+                            dias
+                        </td>
+                        <td>
+                            horario
+                        </td>
+                        <td>
+                            descripcion
+                        </td>
+                        <td>
+                            Activo
+                        </td>
+
+                        <td class="config-controles">
+                            <a href="#"><i class="fas fa-edit"></i> Editar</a> <br />
+                            <a href="#"><i class="fas fa-plus-circle"></i> Detalles</a> <br />
+                            <a href="#"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <!-- /.contenido pantalla -->
+            </div>
+        </div>
+        <!-- ./content -->
+
+    </div>
+</body>
+</html>

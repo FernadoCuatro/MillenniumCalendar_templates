@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MillenniumCalendar.SP_buscar_administrador_idResult>
+
+@{
+    Layout = "~/Views/Shared/Layout_2.cshtml";
+}
+
+<h4 class="text-center">Detalles acerca del administrador</h4>
+<hr />
+
+<div class="cont-detalles">
+    @foreach (var item in Model)
+    {
+        <p><b>Identificador del administrador:</b> @Html.DisplayFor(modelItem => item.id_administrador )</p>
+        <p><b>Nombres:</b> @Html.DisplayFor(modelItem => item.nombre )</p>
+        <p><b>Apellidos:</b> @Html.DisplayFor(modelItem => item.apellido )</p>
+        <p><b>Correo electrónico:</b> @Html.DisplayFor(modelItem => item.correo )</p>
+        <p><b>Estado del administrador:</b> @{ if (item.estado_administrador.Equals("A ")) {  @Html.DisplayName("Activo"); } else { @Html.DisplayName("Inactivo"); }  } </p>
+        <p><b>Estado del login:</b> @{ if (item.estado_login.Equals("A ")) {  @Html.DisplayName("Activo"); } else { @Html.DisplayName("Inactivo"); }  } </p>
+
+        <p class="cont-aditoria"><b>Administrador agregado por:</b> @Html.DisplayFor(modelItem => item.administrador_inserta) | @Html.DisplayFor(modelItem => item.fecha_inserta)</p>
+        <p><b>Administrador actualizado por:</b> @Html.DisplayFor(modelItem => item.administrador_actualiza) | @Html.DisplayFor(modelItem => item.fecha_actualiza)</p>
+
+        <p class="cont-aditoria"><b>Login agregado por:</b> @Html.DisplayFor(modelItem => item.login_inserta) | @Html.DisplayFor(modelItem => item.fecha_inserta)</p>
+        <p><b>Login actualizado por:</b> @Html.DisplayFor(modelItem => item.login_actualiza) | @Html.DisplayFor(modelItem => item.fecha_actualiza)</p>
+    }
+</div>
+
+<br/><br />
+
+<div class="text-center">
+    @Html.ActionLink("Volver a listar todo los administradores", "Index", "Usuarios")
+</div>
